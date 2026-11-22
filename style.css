@@ -1,0 +1,575 @@
+/* =================================
+   1. GENERAL SETTINGS
+================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #FAF4EC;
+    color: #493A34;
+    font-family: 'Poppins', sans-serif;
+    padding: 30px;
+}
+
+
+/* =================================
+   2. HEADER
+================================= */
+
+.header {
+    max-width: 1100px;
+    margin: 0 auto 35px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo {
+    font-family: 'Nunito', sans-serif;
+    font-size: 27px;
+    font-weight: 800;
+    color: #493A34;
+    text-decoration: none;
+}
+
+.logo span {
+    color: #B9795D;
+}
+
+.header p {
+    color: #88838A;
+    font-size: 13px;
+}
+
+.header-link {
+    color: #493A34;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.header-link:hover {
+    color: #9A573D;
+}
+
+
+/* =================================
+   3. MAIN GRID
+================================= */
+
+.portfolio-grid {
+    max-width: 1100px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-auto-rows: minmax(155px, auto);
+    gap: 16px;
+}
+
+
+/* =================================
+   4. COMMON CARD DESIGN
+================================= */
+
+.card {
+    min-width: 0;
+    padding: 22px;
+    border-radius: 22px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 18px;
+
+    overflow: hidden;
+
+    border: 1px solid rgba(73, 58, 52, 0.06);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background-color 0.3s ease;
+}
+
+.card-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.card h1,
+.card h2,
+.card h3 {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 800;
+}
+
+.card h1 {
+    font-size: 34px;
+    line-height: 1.15;
+}
+
+.card h2 {
+    font-size: 23px;
+}
+
+.card h3 {
+    font-size: 17px;
+}
+
+.card p {
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.card-link {
+    color: inherit;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 700;
+    transition: color 0.3s ease;
+}
+
+.card-link:hover {
+    color: #9A573D;
+    text-decoration: underline;
+}
+
+.card-icon {
+    font-size: 28px;
+    font-weight: 700;
+}
+
+
+/* =================================
+   5. DESKTOP GRID POSITIONING
+================================= */
+
+/* About Me: large introduction */
+
+.about {
+    grid-column: 1 / 3;
+    grid-row: 1 / 3;
+    background-color: #F2DFD0;
+}
+
+/* Skills */
+
+.skills {
+    grid-column: 3 / 5;
+    grid-row: 1;
+    background-color: #E9C5AE;
+}
+
+/* Featured Project */
+
+.featured {
+    grid-column: 3 / 5;
+    grid-row: 2;
+    background-color: #DDA58A;
+}
+
+/* Graphic Design */
+
+.graphic {
+    grid-column: 1;
+    grid-row: 3;
+    background-color: #F6E8DB;
+}
+
+/* Web Development */
+
+.development {
+    grid-column: 2;
+    grid-row: 3;
+    background-color: #E8C9B9;
+}
+
+/* Education */
+
+.education {
+    grid-column: 3 / 5;
+    grid-row: 3 / 5;
+    background-color: #EBD5C5;
+}
+
+/* Languages */
+
+.languages {
+    grid-column: 1 / 3;
+    grid-row: 4;
+    background-color: #D8B5A5;
+}
+
+/* Contact */
+
+.contact {
+    grid-column: 1 / 5;
+    grid-row: 5;
+    background-color: #F2DFD0;
+}
+
+
+/* =================================
+   6. SPECIAL CARD DETAILS
+================================= */
+
+.about-content {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.decoration {
+    font-size: 30px;
+    align-self: flex-end;
+    color: #FFFFFF;
+
+    animation: float 3s ease-in-out infinite;
+}
+
+.skills .card-content,
+.featured .card-content {
+    gap: 10px;
+}
+
+.featured .card-link {
+    color: #9A573D;
+}
+
+.featured .card-link:hover {
+    color: #493A34;
+}
+
+
+/* =================================
+   7. EDUCATION LAYOUT
+================================= */
+
+.education .card-content {
+    gap: 12px;
+}
+
+.education-list {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+    margin-top: 5px;
+}
+
+.education-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.education-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+    width: 30px;
+    height: 30px;
+
+    border-radius: 50%;
+    background-color: #F6E8DB;
+    color: #9A573D;
+
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.education-item h4 {
+    margin: 0 0 3px;
+    font-size: 13px;
+}
+
+.education-item p {
+    margin: 0;
+    font-size: 12px;
+    opacity: 0.8;
+}
+
+
+/* =================================
+   8. CONTACT LAYOUT
+================================= */
+
+.contact {
+    min-height: 190px;
+}
+
+.contact-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.contact-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+}
+
+.contact-links a {
+    color: #493A34;
+    font-size: 12px;
+    font-weight: 700;
+    text-decoration: none;
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.contact-links a:hover {
+    color: #9A573D;
+    transform: translateY(-3px);
+}
+
+
+/* =================================
+   9. MOVING CONTACT MESSAGE
+================================= */
+
+.contact-marquee {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+
+    margin-top: 5px;
+    padding: 12px 0 5px;
+
+    border-top: 1px solid rgba(73, 58, 52, 0.15);
+}
+
+.marquee-track {
+    display: flex;
+    width: max-content;
+
+    animation: moveMessage 18s linear infinite;
+}
+
+.marquee-track span {
+    flex-shrink: 0;
+    padding-right: 35px;
+
+    color: #9A573D;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.contact-marquee:hover .marquee-track {
+    animation-play-state: paused;
+}
+
+@keyframes moveMessage {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+
+/* =================================
+   10. HOVER EFFECTS
+================================= */
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 25px rgba(121, 79, 58, 0.14);
+}
+
+
+/* =================================
+   11. CONTINUOUS DECORATION
+================================= */
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+
+/* =================================
+   12. FOOTER
+================================= */
+
+footer {
+    max-width: 1100px;
+    margin: 30px auto 0;
+    padding: 15px 0;
+
+    text-align: center;
+    color: #88838A;
+    font-size: 12px;
+}
+
+
+/* =================================
+   13. TABLET RESPONSIVE DESIGN
+================================= */
+
+@media (max-width: 760px) {
+
+    body {
+        padding: 20px;
+    }
+
+    .portfolio-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-auto-rows: minmax(155px, auto);
+        gap: 14px;
+    }
+
+    .card {
+        grid-row: auto;
+        grid-column: auto;
+    }
+
+    .about {
+        grid-column: 1 / 3;
+        min-height: 250px;
+    }
+
+    .skills,
+    .featured,
+    .education,
+    .languages,
+    .contact {
+        grid-column: 1 / 3;
+    }
+
+    .education {
+        min-height: 240px;
+    }
+
+    .header {
+        gap: 12px;
+    }
+}
+
+
+/* =================================
+   14. MOBILE RESPONSIVE DESIGN
+================================= */
+
+@media (max-width: 480px) {
+
+    body {
+        padding: 14px;
+    }
+
+    .header {
+        margin-bottom: 25px;
+    }
+
+    .header p {
+        display: none;
+    }
+
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+        grid-auto-rows: auto;
+        gap: 12px;
+    }
+
+    .card {
+        grid-column: 1;
+        grid-row: auto;
+        min-height: 155px;
+        padding: 18px;
+        border-radius: 18px;
+    }
+
+    .about {
+        min-height: 260px;
+    }
+
+    .education {
+        min-height: 240px;
+    }
+
+    .contact {
+        min-height: 190px;
+    }
+
+    .card h1 {
+        font-size: 27px;
+    }
+
+    .card h2 {
+        font-size: 19px;
+    }
+
+    .card h3 {
+        font-size: 16px;
+    }
+
+    .card p {
+        font-size: 12px;
+    }
+
+    .contact-content {
+        align-items: flex-start;
+    }
+
+    .contact-links {
+        gap: 14px;
+    }
+}
+
+
+/* =================================
+   15. ACCESSIBILITY
+================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
